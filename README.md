@@ -182,3 +182,28 @@ real content later (from the backend's GraphQL API, a CMS, whatever) is a
 matter of replacing that one file's exports, not hunting through JSX
 across thirty components.
 
+## Component inventory
+
+**Layout** — `Navbar` (scroll-aware glass background, hover mega-menu for
+Product/Resources, mobile drawer, theme toggle) and `Footer`
+(link columns generated from `lib/data.ts`'s `footerNav`, social icons).
+
+**Marketing** — `Hero`, `StatsBand` (+`AnimatedCounter`, a
+`requestAnimationFrame`-driven count-up that only fires once in view),
+`HowItWorks`, `FeatureRow` (+`FeatureMockup`, which renders one of five
+different mini-dashboards — savings/bills/investments/inheritance/rules
+— based on a `kind` prop), `RolesSection` (role cards + the full
+permission matrix table), `AssetStrip`, `StellarSection`,
+`SecuritySection`, `AutomationSection` (+`AutomationList`),
+`ComparisonSection`, `TestimonialsCarousel`, `FaqSection`,
+`PricingCards`, `CtaSection`, `RoadmapTimeline`, `ContactForm`,
+`TreasuryIllustration` (the floating-cards hero visual), `PageHero`
+(shared sub-page header), `SectionHeader`.
+
+**Dashboard** (`/app` only) — `StatCard`, `PortfolioChart` (Recharts
+`AreaChart`), `AllocationDonut` (Recharts `PieChart`), `ActivityTimeline`.
+
+**UI primitives** — `Button` (cva variants: primary/accent/outline/
+ghost/link), `Card` (+Header/Title/Description/Content/Footer), `Badge`,
+`Accordion` (Radix, used by the FAQ), `Container`/`Section`.
+
