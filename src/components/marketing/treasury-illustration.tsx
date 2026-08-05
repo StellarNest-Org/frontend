@@ -75,3 +75,35 @@ export function TreasuryIllustration() {
         </div>
       </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.25 }}
+        className="animate-float glass-panel absolute -right-6 -top-8 hidden w-48 rounded-2xl p-4 shadow-xl sm:block"
+      >
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+          Approval needed
+        </div>
+        <p className="mt-1.5 font-display text-lg font-semibold">$1,250 → Rent</p>
+        <p className="mt-1 text-xs text-muted-foreground">1 of 2 approvals · Parent, Guardian</p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+        className="animate-float glass-panel absolute -bottom-8 -left-6 hidden w-44 rounded-2xl p-4 shadow-xl [animation-delay:-2s] sm:block"
+      >
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <Sparkles className="h-3.5 w-3.5 text-accent" />
+          Automation ran
+        </div>
+        <p className="mt-1.5 font-display text-lg font-semibold">+$200 saved</p>
+        <p className="mt-1 flex items-center gap-1 text-xs text-success">
+          Emergency Fund <ArrowUpRight className="h-3 w-3" />
+        </p>
+      </motion.div>
+    </div>
+  );
+}
