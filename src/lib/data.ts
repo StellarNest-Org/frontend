@@ -411,3 +411,70 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+export const docsSections = [
+  {
+    title: 'Getting started',
+    items: [
+      { title: 'Create your first treasury', description: 'Deploy a treasury and invite your family in under five minutes.' },
+      { title: 'Connect a wallet', description: 'Freighter, hardware wallets, and passkey signers.' },
+      { title: 'Understanding roles', description: 'Owner, Parent, Guardian, Child, Advisor, Viewer.' },
+    ],
+  },
+  {
+    title: 'Treasury operations',
+    items: [
+      { title: 'Approval rules', description: 'Thresholds, required signatures, and how pending withdrawals resolve.' },
+      { title: 'Savings goals', description: 'Create goals, contribute, and track progress on-chain.' },
+      { title: 'Bills & automation', description: 'Recurring payments, reminders, and workflow scheduling.' },
+    ],
+  },
+  {
+    title: 'Inheritance vault',
+    items: [
+      { title: 'Beneficiaries & allocations', description: 'Basis-point splits that must sum to 100%.' },
+      { title: 'Time-locks & dead-man switch', description: 'Two independent conditions that can unlock a claim.' },
+      { title: 'Guardian approvals', description: 'Configurable multi-guardian sign-off before distribution.' },
+    ],
+  },
+  {
+    title: 'API reference',
+    items: [
+      { title: 'GraphQL schema', description: 'Queries and mutations for families, treasuries, and rules.' },
+      { title: 'Stellar integration', description: 'Non-custodial XDR build & submit flow.' },
+      { title: 'Webhooks', description: 'Subscribe to treasury and inheritance events.' },
+    ],
+  },
+];
+
+export const techStack = [
+  { name: 'React', category: 'Frontend' },
+  { name: 'Next.js', category: 'Frontend' },
+  { name: 'TailwindCSS', category: 'Frontend' },
+  { name: 'TypeScript', category: 'Frontend' },
+  { name: 'Soroban', category: 'Contracts' },
+  { name: 'Stellar SDK', category: 'Integration' },
+  { name: 'Freighter', category: 'Integration' },
+  { name: 'GraphQL', category: 'Backend' },
+  { name: 'Prisma', category: 'Backend' },
+  { name: 'PostgreSQL', category: 'Backend' },
+  { name: 'NestJS', category: 'Backend' },
+  { name: 'Docker', category: 'Infra' },
+];
+
+export const repos = [
+  {
+    name: 'frontend',
+    description: 'The StellarNest web app — Next.js, TypeScript, Tailwind.',
+    href: 'https://github.com/StellarNest-Org/frontend',
+  },
+  {
+    name: 'backend',
+    description: 'GraphQL API — NestJS, Prisma, Postgres, non-custodial Stellar integration.',
+    href: 'https://github.com/StellarNest-Org/backend',
+  },
+  {
+    name: 'contracts',
+    description: 'The `treasury` Soroban contract — roles, rules, savings, bills, inheritance.',
+    href: 'https://github.com/StellarNest-Org/contracts',
+  },
+];
