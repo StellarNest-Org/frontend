@@ -86,3 +86,25 @@ export default function DevelopersPage() {
         </Container>
       </Section>
 
+      <Section className="border-t border-border">
+        <Container className="flex flex-col items-center gap-4 text-center">
+          <h2 className="font-display text-2xl font-semibold">Contributing</h2>
+          <p className="max-w-xl text-muted-foreground">
+            Issues labeled <code className="rounded bg-secondary px-1.5 py-0.5 font-mono text-sm">good first issue</code>{' '}
+            are a great place to start. Read the docs, open a PR, and join the Discord for review.
+          </p>
+          <div className="flex gap-3">
+            <Button variant="outline" asChild>
+              <Link href="/docs">Read Documentation</Link>
+            </Button>
+            <Button asChild>
+              <a href="https://github.com/StellarNest-Org" target="_blank" rel="noreferrer">
+                Browse issues
+              </a>
+            </Button>
+          </div>
+        </Container>
+      </Section>
+    </>
+  );
+}
