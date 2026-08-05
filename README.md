@@ -115,3 +115,24 @@ primitives (`accordion`, `slot`) · Recharts · React Hook Form + Zod v4 ·
 + Inter + JetBrains Mono) · `next/og` for dynamically generated OG/Twitter
 images and the Apple touch icon.
 
+## Pages
+
+| Route | What's there |
+|---|---|
+| `/` | Hero, animated stats, "how it works," all five feature sections (savings, bills, investing, inheritance, rules), roles & permission matrix, multi-asset strip, Stellar integration explainer, security grid, automation workflows, comparison table, testimonials carousel, FAQ, CTA |
+| `/about` | Mission/story, values, team grid, stats |
+| `/features` | The same five feature sections as the homepage in more depth, plus roles, assets, and automation |
+| `/pricing` | Starter/Pro/Enterprise pricing cards, comparison table, FAQ |
+| `/roadmap` | Shipped → now → next → later timeline |
+| `/docs` | Guide index (getting started, treasury operations, inheritance vault, API reference) with real GraphQL and non-custodial-signing code samples |
+| `/developers` | Repo links, tech stack by category, contributing pointer |
+| `/blog` , `/blog/[slug]` | Four full posts on programmable treasuries, inheritance without probate, why Soroban, and kids' allowances |
+| `/contact` | Validated contact form (React Hook Form + Zod) |
+| `/privacy`, `/terms` | Legal pages |
+| `/app` | **Product preview** — the treasury dashboard, described [below](#the-app-dashboard-preview) |
+| `not-found` (404) | Branded "this nest is empty" page |
+
+Every route also gets a generated `sitemap.xml`, `robots.txt`, a
+`manifest.webmanifest`, and a dynamic Open Graph image — see
+[SEO & metadata](#seo--metadata).
+
