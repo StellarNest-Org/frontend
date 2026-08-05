@@ -56,3 +56,53 @@ It's one of three StellarNest repos:
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 
+## New to this stack? Start here
+
+A few concepts recur throughout this codebase. If any of these are new
+to you, this section should be enough to follow the rest of the README:
+
+- **Next.js** is a framework built on top of React that adds file-based
+  **routing** (a folder under `src/app/` becomes a URL — `src/app/about/`
+  is `/about`), **rendering on the server** (pages are built to HTML
+  before they reach the browser, which is faster and better for SEO than
+  a blank page that fills in with JavaScript), and conventions for
+  things every real site needs — metadata, sitemaps, image optimization
+  — without extra libraries. The **App Router** (the `app/` directory,
+  as opposed to the older `pages/` directory) is Next's current routing
+  system; every route in this repo is a `page.tsx` file inside a folder
+  named for its URL segment.
+- **Server vs. Client Components.** In the App Router, every component
+  is a Server Component by default — it renders once on the server and
+  ships only HTML to the browser, no JavaScript for that component at
+  all. A component becomes a **Client Component** (add `'use client'` at
+  the top of the file) only when it needs interactivity — state, event
+  handlers, browser APIs like `window`. In this repo, that's things like
+  `Navbar` (menu open/close state), the theme toggle, the testimonials
+  carousel, and any chart. Everything else — most of the marketing
+  sections — is a Server Component, which keeps the amount of JavaScript
+  sent to the browser small.
+- **Turbopack** is Next's newer, faster bundler (the tool that turns all
+  these `.tsx` files into what a browser can run) — as of Next.js 16
+  it's the default for both `next dev` and `next build`, replacing
+  Webpack.
+- **Tailwind CSS** lets you style elements with utility classes directly
+  in JSX (`className="rounded-2xl border p-6"`) instead of writing
+  separate CSS files. **Tailwind v4** changed how theming works: instead
+  of a `tailwind.config.js` file, colors/fonts/spacing are defined as
+  plain CSS custom properties inside an `@theme` block in
+  `src/app/globals.css` — that's why you won't find a config file in
+  this repo, just that one CSS file.
+- **Radix UI** provides unstyled, fully-accessible interactive
+  components (keyboard navigation, correct ARIA attributes) that this
+  repo wraps with its own Tailwind classes — e.g. `Accordion` in
+  `src/components/ui/accordion.tsx` is Radix's accordion primitive with
+  StellarNest's own look applied on top.
+- **`next/font`** downloads and self-hosts Google Fonts (Fraunces,
+  Inter, JetBrains Mono here) at build time, so the browser never makes
+  a separate request to Google's servers — faster, and avoids a
+  flash-of-different-font as the page loads.
+- **`next/og`** generates images (like the Open Graph preview image you
+  see when a link is shared on social media) on the fly from JSX/CSS,
+  the same way a page renders — see `src/app/opengraph-image.tsx`. No
+  static image file to keep in sync with the brand by hand.
+
