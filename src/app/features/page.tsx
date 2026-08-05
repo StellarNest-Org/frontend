@@ -84,3 +84,10 @@ export default function FeaturesPage() {
         kind="rules"
       />
 
+      <RolesSection />
+      <AssetStrip />
+      <AutomationSection />
+      <CtaSection />
+    </>
+  );
+}
