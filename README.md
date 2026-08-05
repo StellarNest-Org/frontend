@@ -40,3 +40,19 @@ It's one of three StellarNest repos:
 | [`backend`](https://github.com/StellarNest-Org/backend) | GraphQL API, Postgres data layer, non-custodial Stellar integration |
 | [`frontend`](https://github.com/StellarNest-Org/frontend) *(this repo)* | Marketing site + product preview (Next.js) |
 
+## Table of contents
+
+- [New to this stack? Start here](#new-to-this-stack-start-here)
+- [Stack](#stack)
+- [Pages](#pages)
+- [Structure](#structure)
+- [Component inventory](#component-inventory)
+- [Design system](#design-system)
+- [The `/app` dashboard preview](#the-app-dashboard-preview)
+- [SEO & metadata](#seo--metadata)
+- [Development](#development)
+- [Testing what you changed](#testing-what-you-changed)
+- [Accessibility & performance](#accessibility--performance)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+
