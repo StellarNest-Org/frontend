@@ -85,3 +85,60 @@ export default function AppPreviewPage() {
             </div>
           </div>
 
+          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="font-display text-lg font-semibold">Savings goals</h2>
+              <div className="mt-5">
+                <FeatureMockup kind="savings" />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="font-display text-lg font-semibold">Upcoming bills</h2>
+              <div className="mt-5">
+                <FeatureMockup kind="bills" />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="font-display text-lg font-semibold">Recent activity</h2>
+              <div className="mt-5">
+                <ActivityTimeline />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            <div className="rounded-2xl border border-border bg-card p-6 lg:col-span-2">
+              <h2 className="font-display text-lg font-semibold">Family & roles</h2>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {familyMembers.map((m) => (
+                  <div key={m.name} className="flex items-center gap-3 rounded-xl border border-border px-4 py-3">
+                    <div
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white"
+                      style={{ backgroundColor: m.avatarColor }}
+                    >
+                      {m.name.split(' ').map((n) => n[0]).join('')}
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">{m.name}</p>
+                      <p className="text-xs text-muted-foreground">{m.role}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="font-display text-lg font-semibold">Active rules</h2>
+              <ul className="mt-5 space-y-3">
+                {familyRules.slice(0, 4).map((rule) => (
+                  <li key={rule} className="text-sm leading-relaxed text-muted-foreground">
+                    • {rule}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </>
+  );
+}
