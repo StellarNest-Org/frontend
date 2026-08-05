@@ -77,3 +77,15 @@ export default function HomePage() {
         kind="rules"
       />
 
+      <RolesSection />
+      <AssetStrip />
+      <StellarSection />
+      <SecuritySection />
+      <AutomationSection />
+      <ComparisonSection />
+      <TestimonialsCarousel />
+      <FaqSection />
+      <CtaSection />
+    </>
+  );
+}
