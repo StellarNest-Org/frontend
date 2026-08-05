@@ -80,3 +80,45 @@ export default function AboutPage() {
 
       <StatsBand />
 
+      <Section className="border-t border-border">
+        <Container>
+          <SectionHeader eyebrow="What we believe" title="The principles behind every feature" />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((value) => (
+              <div key={value.title} className="rounded-2xl border border-border bg-card p-6">
+                <value.icon className="h-6 w-6 text-primary" />
+                <h3 className="mt-4 font-display text-lg font-semibold">{value.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="border-t border-border bg-secondary/30">
+        <Container>
+          <SectionHeader eyebrow="Team" title="A small team, building in the open" />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((member) => (
+              <div key={member.name} className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 font-display text-lg font-semibold text-primary">
+                  {member.name
+                    .split(' ')
+                    .map((n) => n[0])
+                    .join('')}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">{member.name}</p>
+                  <p className="text-xs text-muted-foreground">{member.role}</p>
+                  <p className="mt-0.5 text-xs text-accent">{member.focus}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <CtaSection />
+    </>
+  );
+}
