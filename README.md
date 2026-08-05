@@ -307,3 +307,10 @@ but does not currently do visual regression testing.
 - `useInView`-gated animations (stats counters, feature mockups) don't
   run until scrolled into view, avoiding wasted work above the fold.
 
+## Deployment
+
+Built for Vercel — `npm run build` produces a standard Next.js
+production build with no special adapter configuration required. Any
+platform that runs `next build` + `next start` (or a Next-aware adapter)
+works equally well.
+
