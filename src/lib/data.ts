@@ -322,3 +322,92 @@ export const pricingPlans: PricingPlan[] = [
   },
 ];
 
+export const comparisonRows = [
+  { label: 'Transparency', bank: 'Statements, monthly', sheet: 'Manual, easy to fake', joint: 'Partial', stellarnest: 'Full on-chain history' },
+  { label: 'Automation', bank: 'Standing orders only', sheet: 'None', joint: 'None', stellarnest: 'Rules-based workflows' },
+  { label: 'Global access', bank: 'Branch-dependent', sheet: 'Yes, informally', joint: 'Limited', stellarnest: 'Anywhere, any device' },
+  { label: 'Fees', bank: 'Wire & FX fees', sheet: 'None (but no infra)', joint: 'Maintenance fees', stellarnest: 'Stellar network fees (~$0.00001)' },
+  { label: 'Programmable rules', bank: 'No', sheet: 'No', joint: 'No', stellarnest: 'Yes, enforced on-chain' },
+  { label: 'Inheritance', bank: 'Requires a will + probate', sheet: 'Informal notes', joint: 'Survivorship only', stellarnest: 'Programmable vault, no probate delay' },
+  { label: 'Shared approvals', bank: 'Rare, manual', sheet: 'Trust-based only', joint: 'Either signer, no limits', stellarnest: 'Configurable multi-sig rules' },
+];
+
+export const stats = [
+  { label: 'Settlement time', value: '3–5', suffix: 's' },
+  { label: 'Typical network fee', value: '0.00001', prefix: '$' },
+  { label: 'Families in beta', value: '1,240', suffix: '+' },
+  { label: 'Treasuries automated', value: '3,800', suffix: '+' },
+];
+
+export const roadmap: RoadmapPhase[] = [
+  {
+    quarter: 'Shipped',
+    title: 'Core treasury & rules engine',
+    items: ['Multi-role treasury creation', 'Approval-threshold withdrawals', 'Shared savings goals', 'Bill reminders'],
+    status: 'done' as const,
+  },
+  {
+    quarter: 'Now',
+    title: 'Automation & investing',
+    items: ['Recurring automation workflows', 'Investment holdings & portfolio charts', 'Passkey sign-in'],
+    status: 'active' as const,
+  },
+  {
+    quarter: 'Next',
+    title: 'Inheritance vault v1',
+    items: ['Time-locked beneficiary vaults', 'Dead-man switch', 'Guardian claim approvals'],
+    status: 'next' as const,
+  },
+  {
+    quarter: 'Later',
+    title: 'Family office tooling',
+    items: ['Multiple treasuries per organization', 'Advanced permission schemes', 'Public API & webhooks'],
+    status: 'later' as const,
+  },
+  {
+    quarter: 'Exploring',
+    title: 'Hardware & recovery',
+    items: ['Hardware wallet co-signing', 'Encrypted social recovery', 'Cross-family lending circles'],
+    status: 'later' as const,
+  },
+];
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: 'programmable-family-treasuries',
+    title: 'What a programmable family treasury actually changes',
+    excerpt:
+      'Joint accounts and spreadsheets rely on trust alone. Rules enforced by a smart contract change what’s possible for how families coordinate money.',
+    date: '2026-06-02',
+    readingTime: '6 min read',
+    tag: 'Product',
+  },
+  {
+    slug: 'inheritance-without-probate-delay',
+    title: 'Inheritance planning without the probate delay',
+    excerpt:
+      'How time-locks, dead-man switches, and guardian approvals let a family’s wealth transfer on the conditions they set — not a court calendar.',
+    date: '2026-05-14',
+    readingTime: '8 min read',
+    tag: 'Inheritance',
+  },
+  {
+    slug: 'soroban-for-family-finance',
+    title: 'Why we built StellarNest on Soroban',
+    excerpt:
+      'Fast settlement and near-zero fees matter, but the real reason is programmability: rules a bank’s back office can’t override.',
+    date: '2026-04-22',
+    readingTime: '7 min read',
+    tag: 'Engineering',
+  },
+  {
+    slug: 'kids-and-crypto-allowances',
+    title: 'Teaching kids money with an allowance they can’t overspend',
+    excerpt:
+      'A spending limit enforced on-chain is a better teacher than a lecture. Notes from families running weekly allowances on StellarNest.',
+    date: '2026-03-30',
+    readingTime: '5 min read',
+    tag: 'Families',
+  },
+];
+
