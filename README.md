@@ -266,3 +266,18 @@ GraphQL API and its non-custodial Stellar signing flow
 - Every page sets its own `title`/`description` via the `metadata`
   export, composed into the root template (`%s · StellarNest`).
 
+## Development
+
+```bash
+npm install
+npm run dev      # http://localhost:3000 (Turbopack)
+npm run lint      # ESLint, flat config (eslint-config-next)
+npm run build     # production build (Turbopack), also type-checks
+npm run start     # serve the production build
+```
+
+There's no `.env` required to run the frontend today — all content is
+local placeholder data in `lib/data.ts`. When the dashboard is wired to
+the live backend, expect a `NEXT_PUBLIC_API_URL` (or similar) to be
+added for the GraphQL endpoint.
+
