@@ -59,3 +59,77 @@ export function Navbar() {
           <NestWordmark />
         </Link>
 
+        <nav
+          className="hidden items-center gap-1 lg:flex"
+          onMouseLeave={() => setOpenMenu(null)}
+        >
+          {mainNav.map((item) =>
+            'items' in item ? (
+              <div key={item.label} className="relative" onMouseEnter={() => setOpenMenu(item.label)}>
+                <button
+                  type="button"
+                  className={cn(
+                    'rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground',
+                    openMenu === item.label && 'bg-secondary text-foreground',
+                  )}
+                >
+                  {item.label}
+                </button>
+                <AnimatePresence>
+                  {openMenu === item.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15 }}
+                      className="glass-panel absolute left-1/2 top-full mt-2 w-80 -translate-x-1/2 rounded-2xl p-2 shadow-xl"
+                    >
+                      {item.items.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          className="block rounded-xl px-4 py-3 transition-colors hover:bg-secondary"
+                        >
+                          <p className="text-sm font-medium text-foreground">{sub.label}</p>
+                          <p className="mt-0.5 text-xs text-muted-foreground">{sub.description}</p>
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
+        </nav>
+
+        <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="/docs">Read Documentation</Link>
+          </Button>
+          <Button variant="primary" size="sm" asChild>
+            <Link href="/app">Launch App</Link>
+          </Button>
+        </div>
+
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            onClick={() => setMobileOpen((v) => !v)}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border"
+          >
+            {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
+        </div>
+      </Container>
+
