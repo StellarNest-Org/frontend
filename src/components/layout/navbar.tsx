@@ -133,3 +133,50 @@ export function Navbar() {
         </div>
       </Container>
 
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden border-t border-border glass-panel lg:hidden"
+          >
+            <Container className="flex flex-col gap-1 py-4">
+              {mainNav.flatMap((item) =>
+                'items' in item
+                  ? item.items.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="rounded-xl px-4 py-3 text-sm font-medium hover:bg-secondary"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))
+                  : [
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="rounded-xl px-4 py-3 text-sm font-medium hover:bg-secondary"
+                      >
+                        {item.label}
+                      </Link>,
+                    ],
+              )}
+              <div className="mt-2 flex gap-2 px-4">
+                <Button variant="outline" size="sm" className="flex-1" asChild>
+                  <Link href="/docs">Docs</Link>
+                </Button>
+                <Button variant="primary" size="sm" className="flex-1" asChild>
+                  <Link href="/app">Launch App</Link>
+                </Button>
+              </div>
+            </Container>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}
