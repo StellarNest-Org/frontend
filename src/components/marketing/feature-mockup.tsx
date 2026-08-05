@@ -145,3 +145,38 @@ function RulesMockup() {
   );
 }
 
+export function FeatureMockup({ kind }: { kind: Kind }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6 }}
+      className="glass-panel grain-surface rounded-3xl p-6 shadow-xl sm:p-8"
+    >
+      {kind === 'savings' && <SavingsMockup />}
+      {kind === 'bills' && <BillsMockup />}
+      {kind === 'investments' && <InvestmentsMockup />}
+      {kind === 'inheritance' && <InheritanceMockup />}
+      {kind === 'rules' && <RulesMockup />}
+    </motion.div>
+  );
+}
+
+export function AutomationList() {
+  return (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {automationWorkflows.map((flow) => (
+        <div key={flow.title} className="rounded-2xl border border-border bg-card p-5">
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-medium text-primary">
+            {flow.trigger}
+          </span>
+          <h4 className="mt-3 font-display text-base font-semibold">{flow.title}</h4>
+          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{flow.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export const trendIcon = { up: TrendingUp, down: TrendingDown };
