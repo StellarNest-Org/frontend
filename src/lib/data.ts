@@ -241,3 +241,84 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
+export const faqs = [
+  {
+    question: 'How are funds protected?',
+    answer:
+      'Every treasury is a Soroban smart contract on Stellar. Funds move only when the contract’s rules are satisfied — spending limits, approval thresholds, and freeze state are enforced on-chain, not by a server StellarNest operates. StellarNest never holds a custodial key to your treasury.',
+  },
+  {
+    question: 'Can children have limited access?',
+    answer:
+      'Yes. Child members get a per-transaction and/or monthly spending limit set by a Parent. Requests within that limit execute immediately; anything above it requires approval, and the treasury can be frozen instantly if needed.',
+  },
+  {
+    question: 'Can multiple parents approve withdrawals?',
+    answer:
+      'Yes. Every treasury has a configurable approval rule — for example, requiring 2 of 3 Owner/Parent/Guardian signatures for withdrawals above a threshold you set. Approvals are collected on-chain before funds move.',
+  },
+  {
+    question: 'How does inheritance work?',
+    answer:
+      'The Owner configures an Inheritance Vault with beneficiaries, percentage allocations, a time-lock, and a dead-man switch. If the Owner stops checking in (heartbeat) past the switch period, or once the time-lock passes, Guardian approvals unlock distribution — automatically, pro-rata, on-chain.',
+  },
+  {
+    question: 'Can we leave the family treasury?',
+    answer:
+      'Any member can be removed by an Owner or Parent, and a member’s access is scoped entirely to their role — removing them revokes it immediately. The treasury itself, and its history, stay auditable on-chain regardless of membership changes.',
+  },
+  {
+    question: 'Can businesses use StellarNest?',
+    answer:
+      'Yes — our Enterprise plan supports multiple treasuries under one family office, advanced permission schemes, and API access for firms managing finances for several client families.',
+  },
+];
+
+export const pricingPlans: PricingPlan[] = [
+  {
+    name: 'Starter',
+    price: 'Free',
+    period: '',
+    description: 'For one family getting started with a shared treasury.',
+    cta: 'Launch App',
+    features: [
+      'One family, unlimited members',
+      'Basic treasury with approval rules',
+      'Shared savings goals',
+      'Bill reminders',
+      'Community support',
+    ],
+  },
+  {
+    name: 'Pro',
+    price: '$12',
+    period: '/month',
+    description: 'For families who invest, automate, and plan ahead together.',
+    cta: 'Start Pro trial',
+    highlighted: true,
+    features: [
+      'Everything in Starter',
+      'Unlimited members & roles',
+      'Investment tracking & portfolio charts',
+      'Inheritance vault with time-locks',
+      'Full automation workflows',
+      'Priority email support',
+    ],
+  },
+  {
+    name: 'Enterprise',
+    price: 'Custom',
+    period: '',
+    description: 'For family offices coordinating several client treasuries.',
+    cta: 'Talk to us',
+    features: [
+      'Everything in Pro',
+      'Multiple treasuries, one dashboard',
+      'Advanced permission schemes',
+      'API & webhook access',
+      'Dedicated onboarding',
+      'Priority support with SLA',
+    ],
+  },
+];
+
