@@ -156,3 +156,88 @@ export const portfolioHistory = [
   { month: 'Aug', value: 171900 },
 ];
 
+export const familyMembers = [
+  { name: 'Amara Adeyemi', role: 'Owner', avatarColor: '#0f6b4c' },
+  { name: 'Chidi Adeyemi', role: 'Parent', avatarColor: '#c08a2e' },
+  { name: 'Uncle Tunde', role: 'Guardian', avatarColor: '#5b8a72' },
+  { name: 'Zainab Adeyemi', role: 'Child', avatarColor: '#8c6a3f' },
+  { name: 'Kene Adeyemi', role: 'Child', avatarColor: '#a3714f' },
+  { name: 'Ms. Okafor, CFA', role: 'Advisor', avatarColor: '#6b8f80' },
+];
+
+export const assets = [
+  { code: 'XLM', name: 'Stellar Lumens', color: '#0f6b4c' },
+  { code: 'USDC', name: 'USD Coin', color: '#2775ca' },
+  { code: 'EURC', name: 'Euro Coin', color: '#5b6ee1' },
+  { code: 'AQUA', name: 'Aquarius', color: '#4f7cff' },
+];
+
+export const automationWorkflows = [
+  {
+    title: 'Automatic savings',
+    description: 'Save $200 to the Emergency Fund every payday, split across contributing members.',
+    trigger: 'Every 2 weeks',
+    icon: 'piggy-bank',
+  },
+  {
+    title: 'Weekly allowance',
+    description: 'Send $25 to each Child member every Friday, capped by their spending limit.',
+    trigger: 'Every Friday',
+    icon: 'wallet',
+  },
+  {
+    title: 'Rent, on autopilot',
+    description: 'Pay rent on the 1st of every month once the treasury balance clears the threshold.',
+    trigger: 'Monthly, day 1',
+    icon: 'home',
+  },
+  {
+    title: 'Profit distribution',
+    description: 'Distribute 10% of quarterly investment profit back into the Vacation goal.',
+    trigger: 'Quarterly',
+    icon: 'trending-up',
+  },
+  {
+    title: 'Inheritance release',
+    description: 'Release the vault to beneficiaries once legal conditions and guardian approvals clear.',
+    trigger: 'Condition-based',
+    icon: 'shield-check',
+  },
+];
+
+export const familyRules = [
+  'Require 2 approvals before any withdrawal above $1,000',
+  'Parents must approve a child’s spend above their weekly allowance',
+  'Each child’s monthly allowance is capped automatically on-chain',
+  'Emergency withdrawal mode bypasses timelocks with 3-of-4 guardian sign-off',
+  'Automatic savings transfers execute every payday, no manual step',
+  'Treasury freezes instantly after two failed approval attempts in 24 hours',
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      'We used to run the family finances off three spreadsheets and a group chat. StellarNest replaced all of it with one treasury everyone can actually see into.',
+    name: 'Amara Adeyemi',
+    role: 'Owner, the Adeyemi family treasury',
+  },
+  {
+    quote:
+      'The allowance automation alone paid for itself. My kids get paid on time, I stop getting asked for money on a Tuesday, and I can see exactly what they spend it on.',
+    name: 'Chidi Adeyemi',
+    role: 'Parent',
+  },
+  {
+    quote:
+      'As the outside guardian, I finally have real visibility without holding the keys myself. The approval flow is exactly the kind of check we needed.',
+    name: 'Tunde Bakare',
+    role: 'Guardian, extended family treasury',
+  },
+  {
+    quote:
+      'We moved our family office’s inheritance planning onto StellarNest’s vault. Time-locks and guardian approval give our clients something a will alone can’t: enforcement.',
+    name: 'Ngozi Okafor, CFA',
+    role: 'Advisor, Meridian Family Office',
+  },
+];
+
