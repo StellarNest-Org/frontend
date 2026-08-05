@@ -236,3 +236,18 @@ deliberately not another dark-mode/single-accent SaaS template:
   `backdrop-filter: blur()` + translucent card background, used for the
   sticky navbar, hero illustration, and testimonial cards.
 
+## The `/app` dashboard preview
+
+`/app` renders what using StellarNest actually looks like: eight stat
+cards (Total Balance, Savings, Bills Due, Investments, Monthly Spending,
+Upcoming Transfers, Inheritance Status, Pending Approvals), a portfolio
+value area chart, an asset-allocation donut, savings-goal progress bars,
+an upcoming-bills list, a recent-activity feed, the family/roles roster,
+and the active rules list — all built from the same placeholder data in
+`lib/data.ts` used elsewhere on the site. It's explicitly labeled a
+**product preview** (see the banner at the top of the page): there's no
+wallet connection or live data here yet. Wiring it up means pointing it
+at [`StellarNest-Org/backend`](https://github.com/StellarNest-Org/backend)'s
+GraphQL API and its non-custodial Stellar signing flow
+(`/stellar/build` → sign client-side → `/stellar/submit`).
+
