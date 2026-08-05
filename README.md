@@ -314,3 +314,11 @@ production build with no special adapter configuration required. Any
 platform that runs `next build` + `next start` (or a Next-aware adapter)
 works equally well.
 
+## Contributing
+
+Issues and PRs are welcome. Before opening a PR: `npm run lint` and
+`npm run build` should both pass cleanly. See
+[`StellarNest-Org/backend`](https://github.com/StellarNest-Org/backend)
+for the API this will eventually consume, and
+[`StellarNest-Org/contracts`](https://github.com/StellarNest-Org/contracts)
+for the on-chain rules the product is built around.
