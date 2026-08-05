@@ -207,3 +207,32 @@ permission matrix table), `AssetStrip`, `StellarSection`,
 ghost/link), `Card` (+Header/Title/Description/Content/Footer), `Badge`,
 `Accordion` (Radix, used by the FAQ), `Container`/`Section`.
 
+## Design system
+
+A distinct visual identity from other StellarNest-adjacent products —
+deliberately not another dark-mode/single-accent SaaS template:
+
+- **Palette** — deep emerald/forest green (`--color-primary`) paired with
+  antique gold (`--color-accent`), on a warm cream base in light mode
+  (`#fbf8f1`) or a deep charcoal-green base in dark mode (`#0d1712`). A
+  "family heritage / treasury" direction rather than a generic tech blue
+  or violet. All tokens are CSS custom properties in
+  `src/app/globals.css`, remapped for Tailwind via `@theme inline` so
+  `bg-primary`, `text-accent`, etc. just work, and swapped per-theme
+  under a `.dark` class (`@custom-variant dark`, driven by `next-themes`).
+- **Typography** — Fraunces (a warm, expressive serif) for display
+  headings, paired with Inter for body/UI text, and JetBrains Mono for
+  code. The serif display face is the one deliberate typographic choice
+  that sets this apart from an all-sans-stack SaaS look.
+- **Logo** — a "nest" of three concentric **dashed** rings plus a solid
+  center dot (`src/components/nest-mark.tsx`, mirrored exactly in
+  `src/app/icon.svg` for the favicon and in the OG/apple-icon generators)
+  — a woven-nest motif instead of a shield, badge, or ticket-style mark.
+- **Motion** — Framer Motion for scroll-triggered reveals (`whileInView`)
+  and the mega-menu/mobile-drawer transitions; a few CSS keyframes
+  (`float`, `shimmer`) in `globals.css` for the hero's floating cards and
+  the accent shimmer text effect.
+- **Glassmorphism** — `.glass-panel` (`globals.css`) — a
+  `backdrop-filter: blur()` + translucent card background, used for the
+  sticky navbar, hero illustration, and testimonial cards.
+
