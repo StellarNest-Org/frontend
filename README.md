@@ -136,3 +136,49 @@ Every route also gets a generated `sitemap.xml`, `robots.txt`, a
 `manifest.webmanifest`, and a dynamic Open Graph image — see
 [SEO & metadata](#seo--metadata).
 
+## Structure
+
+```
+src/
+  app/
+    <route>/page.tsx      one folder per route in the table above
+    layout.tsx             root layout: fonts, ThemeProvider, QueryProvider, Navbar/Footer
+    globals.css             Tailwind v4 theme tokens (@theme, @custom-variant dark)
+    manifest.ts             PWA manifest (Next file convention)
+    opengraph-image.tsx     dynamic 1200×630 OG image (next/og)
+    apple-icon.tsx          dynamic 180×180 apple touch icon (next/og)
+    icon.svg                 favicon — the canonical nest-mark SVG
+    sitemap.ts, robots.ts    generated from lib/data.ts
+
+  components/
+    layout/          navbar (mega menu, mobile drawer, theme toggle), footer
+    marketing/        hero, feature rows, roles section, comparison table,
+                      testimonials carousel, FAQ accordion, pricing cards,
+                      CTA section, roadmap timeline, contact form, stats band,
+                      treasury illustration, asset strip, Stellar/security sections
+    dashboard/        stat cards, portfolio area chart, allocation donut,
+                      activity timeline (used on /app)
+    ui/                button, card, badge, accordion, container/section
+    nest-mark.tsx      the logo mark + wordmark, as React components
+    social-icons.tsx   hand-rolled GitHub/X/Discord SVGs (lucide-react dropped brand icons)
+    theme-provider.tsx, query-provider.tsx
+
+  lib/
+    data.ts    every piece of placeholder content: nav, roles, permission
+               matrix, savings goals, bills, portfolio data, family members,
+               assets, automations, family rules, testimonials, FAQ,
+               pricing, comparison table, stats, roadmap, blog posts, docs
+               sections, tech stack, repo list
+    fonts.ts   next/font declarations (Fraunces, Inter, JetBrains Mono)
+    utils.ts   cn() (clsx + tailwind-merge), formatCurrency, formatCompact
+
+  types/
+    index.ts   shared types for the content in lib/data.ts (NavLink, NavMenu,
+               BlogPost, RoadmapPhase, PricingPlan, Testimonial, FamilyRoleDefinition)
+```
+
+All marketing content lives in `lib/data.ts` on purpose — swapping in
+real content later (from the backend's GraphQL API, a CMS, whatever) is a
+matter of replacing that one file's exports, not hunting through JSX
+across thirty components.
+
