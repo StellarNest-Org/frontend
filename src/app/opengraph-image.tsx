@@ -62,3 +62,38 @@ export default async function Image() {
           }}
         />
 
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginTop: 470,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 64,
+              fontWeight: 600,
+              color: '#f3efe2',
+              letterSpacing: '-0.02em',
+              display: 'flex',
+            }}
+          >
+            {siteConfig.name}
+          </div>
+          <div
+            style={{
+              fontSize: 28,
+              color: '#9fab9f',
+              marginTop: 14,
+              display: 'flex',
+            }}
+          >
+            {siteConfig.tagline}
+          </div>
+        </div>
+      </div>
+    ),
+    { ...size },
+  );
+}
