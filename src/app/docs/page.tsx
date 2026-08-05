@@ -85,3 +85,43 @@ export default function DocsPage() {
         </Container>
       </Section>
 
+      <Section className="border-t border-border">
+        <Container>
+          <SectionHeader
+            align="left"
+            eyebrow="Non-custodial by design"
+            title="The build → sign → submit flow"
+            description="Every on-chain action follows the same three steps — the backend never touches a secret key."
+            className="mx-0 text-left"
+          />
+          <pre className="mt-8 overflow-x-auto rounded-2xl border border-border bg-[#0d1712] p-6 text-sm leading-relaxed text-[#d7f5e6]">
+            <code className="font-mono">{xdrExample}</code>
+          </pre>
+          <p className="mt-6 text-sm text-muted-foreground">
+            Full API reference and contract source live in{' '}
+            <Link href="/developers" className="text-primary underline underline-offset-4">
+              the developer hub
+            </Link>
+            .
+          </p>
+        </Container>
+      </Section>
+
+      <Section className="border-t border-border">
+        <Container className="flex flex-col items-center gap-4 text-center">
+          <h2 className="font-display text-2xl font-semibold">Ready to build?</h2>
+          <p className="max-w-xl text-muted-foreground">
+            Clone the repos, spin up Postgres with Docker, and you have a working StellarNest stack
+            in minutes.
+          </p>
+          <Link
+            href="https://github.com/StellarNest-Org"
+            className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+          >
+            View the repos on GitHub <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Container>
+      </Section>
+    </>
+  );
+}
