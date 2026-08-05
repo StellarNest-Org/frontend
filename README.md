@@ -281,3 +281,14 @@ local placeholder data in `lib/data.ts`. When the dashboard is wired to
 the live backend, expect a `NEXT_PUBLIC_API_URL` (or similar) to be
 added for the GraphQL endpoint.
 
+## Testing what you changed
+
+There's no component test suite yet (this repo is UI-heavy and
+placeholder-data-driven, so the highest-value checks today are `npm run
+lint` and `npm run build` — the build type-checks every page and fails
+loudly on a bad import, a missing `key`, or an unresolved route). For
+anything visual, run `npm run dev` and click through the affected pages
+in both light and dark mode (the toggle is in the navbar) — the
+`.github/workflows/ci.yml` workflow runs lint + build on every push/PR
+but does not currently do visual regression testing.
+
