@@ -86,3 +86,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </Container>
       </Section>
 
+      <CtaSection />
+    </>
+  );
+}
