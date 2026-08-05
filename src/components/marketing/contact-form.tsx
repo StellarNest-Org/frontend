@@ -78,3 +78,41 @@ export function ContactForm() {
         </div>
       </div>
 
+      <div className="mt-5">
+        <label htmlFor="topic" className="text-sm font-medium">
+          Topic
+        </label>
+        <select
+          id="topic"
+          {...register('topic')}
+          className="mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+        >
+          {topics.map((t) => (
+            <option key={t.value} value={t.value}>
+              {t.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="mt-5">
+        <label htmlFor="message" className="text-sm font-medium">
+          Message
+        </label>
+        <textarea
+          id="message"
+          rows={5}
+          {...register('message')}
+          className="mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+          placeholder="Tell us a bit about your family or organization…"
+        />
+        {errors.message && <p className="mt-1.5 text-xs text-destructive">{errors.message.message}</p>}
+      </div>
+
+      <Button type="submit" size="lg" className="mt-7 w-full sm:w-auto" disabled={isSubmitting}>
+        {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+        Send message
+      </Button>
+    </form>
+  );
+}
