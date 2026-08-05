@@ -69,3 +69,79 @@ function BillsMockup() {
   );
 }
 
+function InvestmentsMockup() {
+  const total = portfolioAllocation.reduce((s, a) => s + a.value, 0);
+  return (
+    <div>
+      <div className="mb-5 flex items-end justify-between">
+        <div>
+          <p className="text-xs text-muted-foreground">Portfolio value</p>
+          <p className="font-display text-2xl font-semibold">{formatCurrency(171900)}</p>
+        </div>
+        <span className="flex items-center gap-1 text-sm font-medium text-success">
+          <TrendingUp className="h-4 w-4" /> +18.9% YTD
+        </span>
+      </div>
+      <div className="flex h-3 w-full overflow-hidden rounded-full">
+        {portfolioAllocation.map((a) => (
+          <div key={a.name} style={{ width: `${(a.value / total) * 100}%`, backgroundColor: a.color }} />
+        ))}
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
+        {portfolioAllocation.map((a) => (
+          <div key={a.name} className="flex items-center gap-2 text-xs text-muted-foreground">
+            <span className="h-2 w-2 rounded-full" style={{ backgroundColor: a.color }} />
+            {a.name} · {a.value}%
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function InheritanceMockup() {
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3.5">
+        <Lock className="h-4 w-4 shrink-0 text-primary" />
+        <div>
+          <p className="text-sm font-medium">Time-lock</p>
+          <p className="text-xs text-muted-foreground">Unlocks in 11 years, 4 months — or sooner via dead-man switch</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3.5">
+        <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
+        <div>
+          <p className="text-sm font-medium">Guardian approvals</p>
+          <p className="text-xs text-muted-foreground">1 of 2 guardians have approved this claim</p>
+        </div>
+      </div>
+      <div className="space-y-2 rounded-xl border border-border bg-card px-4 py-3.5">
+        <p className="text-sm font-medium">Beneficiary allocation</p>
+        {[
+          { name: 'Zainab Adeyemi', pct: 50 },
+          { name: 'Kene Adeyemi', pct: 50 },
+        ].map((b) => (
+          <div key={b.name} className="flex items-center justify-between text-xs text-muted-foreground">
+            <span>{b.name}</span>
+            <span className="font-medium text-foreground">{b.pct}%</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function RulesMockup() {
+  return (
+    <div className="space-y-2.5">
+      {familyRules.slice(0, 5).map((rule) => (
+        <div key={rule} className="flex items-start gap-2.5 rounded-xl border border-border bg-card px-4 py-3">
+          <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+          <p className="text-sm text-foreground/90">{rule}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
