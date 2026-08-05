@@ -292,3 +292,18 @@ in both light and dark mode (the toggle is in the navbar) — the
 `.github/workflows/ci.yml` workflow runs lint + build on every push/PR
 but does not currently do visual regression testing.
 
+## Accessibility & performance
+
+- Semantic headings (`h1`→`h2`→`h3`) throughout; the accordion, tabs-style
+  toggles, and mega-menu use Radix primitives for correct ARIA roles and
+  keyboard navigation.
+- Color contrast was chosen against both the cream/light and
+  charcoal-green/dark backgrounds, not just one theme.
+- `next/font` self-hosts and subsets all three typefaces (no external
+  font request at runtime, no layout shift from a late font swap).
+- Charts, the mega-menu, and the testimonials carousel are the only
+  client components with real interactivity — everything else renders
+  as a Server Component by default, keeping the client JS bundle small.
+- `useInView`-gated animations (stats counters, feature mockups) don't
+  run until scrolled into view, avoiding wasted work above the fold.
+
