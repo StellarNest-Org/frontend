@@ -106,3 +106,12 @@ to you, this section should be enough to follow the rest of the README:
   the same way a page renders — see `src/app/opengraph-image.tsx`. No
   static image file to keep in sync with the brand by hand.
 
+## Stack
+
+Next.js 16 (App Router, Turbopack, React 19) · TypeScript · Tailwind CSS 4
+(CSS-first `@theme`, no `tailwind.config.js`) · Framer Motion · Radix UI
+primitives (`accordion`, `slot`) · Recharts · React Hook Form + Zod v4 ·
+`next-themes` for dark/light mode · TanStack Query · `next/font` (Fraunces
++ Inter + JetBrains Mono) · `next/og` for dynamically generated OG/Twitter
+images and the Apple touch icon.
+
