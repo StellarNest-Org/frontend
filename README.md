@@ -251,3 +251,18 @@ at [`StellarNest-Org/backend`](https://github.com/StellarNest-Org/backend)'s
 GraphQL API and its non-custodial Stellar signing flow
 (`/stellar/build` → sign client-side → `/stellar/submit`).
 
+## SEO & metadata
+
+- `src/app/layout.tsx` sets a title template, Open Graph and Twitter Card
+  metadata, and theme-color per color scheme.
+- `src/app/opengraph-image.tsx` and `apple-icon.tsx` generate real PNGs
+  at request time via `next/og`'s `ImageResponse` — no static image
+  asset to keep in sync with the brand, they're built from the same
+  colors/marks as the rest of the site.
+- `src/app/manifest.ts` is a proper PWA manifest (Next's file
+  convention, served at `/manifest.webmanifest`).
+- `src/app/sitemap.ts` and `robots.ts` are generated from `lib/data.ts`
+  (every static route plus every blog post slug).
+- Every page sets its own `title`/`description` via the `metadata`
+  export, composed into the root template (`%s · StellarNest`).
+
