@@ -10,6 +10,7 @@ retainer for the inheritance conversation nobody wants to have out loud.
 None of it is programmable, and none of it actually enforces what the
 family agreed to — a spending limit is a promise, not a rule; an
 approval is a text message, not a signature.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/5f1bd9dd-2d48-42da-83f2-b160e2d69c83" />
 
 StellarNest replaces all of that with **one shared treasury per family**:
 a Soroban smart contract on the Stellar network that holds the money and
